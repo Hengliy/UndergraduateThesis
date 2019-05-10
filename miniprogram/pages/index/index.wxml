@@ -1,0 +1,95 @@
+<!--index.wxml-->
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+
+<form bindsubmit="formSubmit">
+    <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">用户名</view>
+      <input placeholder="请输入用户名" maxlength="10" class="txt3" value="{{UserName}}" bindchange="name" name="name2"/>
+    </view>
+
+    <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">密码</view>
+      <input type="idcard" placeholder="请输入密码" class="txt3"   value="{{IDnum}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    </view>
+
+    <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">确认密码</view>
+      <input type="idcard" placeholder="确认密码" class="txt3"   value="{{UserPsd}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    
+    </view>
+        <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">单位类型</view>
+      <input type="idcard" placeholder="高等院校" class="txt3"   value="{{DepartmentType}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+   
+    </view>
+        <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">单位名称</view>
+      <input type="idcard" placeholder="单位名称" class="txt3"   value="{{UnitName}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    
+    </view>
+        <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">部门名称</view>
+      <input type="idcard" placeholder="部门名称" class="txt3"   value="{{DepartmentName}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+
+    </view>
+        <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">注册身份</view>
+      <input type="idcard" placeholder="请选择注册身份" class="txt3"   value="{{Duty}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    </view>
+
+        <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">真实姓名</view>
+      <input type="idcard" placeholder="请输入真实姓名" class="txt3"   value="{{RealName}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    </view>
+
+        <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">身份证号</view>
+      <input type="idcard" placeholder="请输入身份证号码" class="txt3"   value="{{IDNum}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    </view>
+
+        <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">手机号</view>
+      <input type="idcard" placeholder="请输入手机号" class="txt3"   value="{{PhoneNum}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    
+<!-- <view class="page-section"role=""aria-label="">
+  <view class="page-section-title"role=""aria-label="">input</view>
+    <view class="weui-cells weui-cells_after-title"role=""aria-label="">
+      <view class="weui-cell weui-cell_input"role=""aria-label="">
+        <view class="weui-cell__bd"role=""aria-label="">
+        <input class="weui-input"name="input"placeholder="请输身份证号"selection-start="-1"selection-end="-1"cursor="-1"value="">
+        请输入身份证
+        </input>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+      </view>
+        <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">邮箱</view>
+      <input type="idcard" placeholder="请输入邮箱" class="txt3"   value="{{mem_IDnum}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    </view>
+
+    <view style="clear:both"></view>
+    <button class="btn" form-type="submit" hover-class="none">提交</button>
+  </form>
+
+
+

@@ -1,0 +1,136 @@
+<form bindsubmit="formSubmit">
+
+      <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">账号</view>
+      <input type="idcard" placeholder="请输入用于登陆的账号" class="txt3"   value="{{userData.usericode}}" bindchange="usericodeChange" maxlength="10" name="usericode"/>
+    </view>
+
+    <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">真实姓名</view>
+      <input placeholder="请输入真实姓名" maxlength="10" class="txt3" value="{{userData.name}}" bindchange="name" name="name"/>
+    </view>
+
+
+    
+    <!-- <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">密码</view>
+      <input type="idcard" placeholder="请输入密码" class="txt3"   value="{{IDnum}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    </view>
+
+    <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">确认密码</view>
+      <input type="idcard" placeholder="确认密码" class="txt3"   value="{{UserPsd}}" bindchange="ID_num" maxlength="18" name="ID_num2"/>
+    </view> -->
+
+    <!-- <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">性别</view>
+      <input type="idcard" placeholder="性别" class="txt3"   value="{{userData.userisex}}" bindchange="userisex2" maxlength="18" name="userisex"/>
+    </view> -->
+
+    <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">性别</view>
+      <view class="weui-btn-area">
+        <picker  bindchange="sexPickerChange" name="userisex" range="{{sexList}}" value="{{sexPickIndex}}" >
+          <button type="default">{{sexList[sexPickIndex]}}</button>
+          <input hidden="true" value="{{sexList[sexPickIndex]}}"  name="userisex"/>
+        </picker>
+      </view>
+    </view>
+
+      <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">身份证号</view>
+      <input type="idcard" placeholder="请输入身份证号码" class="txt3"   value="{{userData.useriidcard}}" bindchange="useriidcard" maxlength="18" name="useriidcard"/>
+      </view>
+
+      <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">邮政编码</view>
+      <input type="idcard" placeholder="邮政编码" class="txt3"   value="{{userData.useripostalcode}}" bindchange="useripostalcode" maxlength="18" name="useripostalcode"/>
+      </view>
+
+      <view wx:if="true" class="txt">
+      <view class="ima"></view>
+      <view class="txt2">学号</view>
+      <input type="idcard" placeholder="请输入学号" class="txt3"  value="{{userData.useristudentnumber}}" bindchange="useristudentnumber" maxlength="18" name="useristudentnumber"/>
+      </view>
+
+      <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">手机号</view>
+      <input type="idcard" placeholder="请输入手机号" class="txt3"   value="{{userData.userimobilephone}}" bindchange="userimobilephone" maxlength="11" name="userimobilephone"/>
+      </view>
+
+      <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">电子邮件</view>
+      <input type="idcard" placeholder="请输入邮箱" class="txt3"   value="{{userData.useriemail}}" bindchange="useriemail" maxlength="18" name="useriemail"/>
+      </view>
+    
+      <!-- <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">职务编号</view>
+      <input type="idcard" placeholder="选择职务" class="txt3"   value="{{userData.useridutyiid_id}}" bindchange="useridutyiid_id" maxlength="18" name="useridutyiid_id"/>
+      </view> -->
+
+    <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">职务</view>
+      <view class="weui-btn-area">
+        <picker bindchange="dutyPickerChange" name="useridutyiid_id" range="{{dutyInfo}}" range-key="name" value="{{dutyPickIndex}}" >
+          <button type="default">{{dutyInfo[dutyPickIndex]["name"]}}</button>
+          <input hidden="true" value="{{dutyPickIndex}}"  name="useridutyiid_id"/>
+        </picker>
+      </view>
+    </view>
+
+      <!-- <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">所在部门编号</view>
+      <input type="idcard" placeholder="选择部门" class="txt3"   value="{{userData.useridepartmentiid_id}}" bindchange="useridepartmentiid_id" maxlength="18" name="useridepartmentiid_id"/>
+      </view> -->
+
+      <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">一级部门</view>
+      <view class="weui-btn-area">
+        <picker id ="depart0" bindchange="departmentPickerChange" name="" range="{{departmentList0}}" range-key="name" value="{{deparmentPickIndex0}}" >
+          <button  type="default">{{departmentList0[departmentPickIndex0]["name"]}}</button>
+        </picker>
+      </view>
+    </view>
+
+      <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">二级部门</view>
+      <view class="weui-btn-area">
+        <picker id ="depart1" bindchange="departmentPickerChange" name="" range="{{departmentList1}}" range-key="name" value="{{deparmentPickIndex1}}" >
+          <button type="default">{{departmentList1[departmentPickIndex1]["name"]}}</button>
+        </picker>
+      </view>
+    </view>
+
+      <view class="txt">
+      <view class="ima"></view>
+      <view class="txt2">三级部门</view>
+      <view class="weui-btn-area">
+        <picker id ="depart2" bindchange="departmentPickerChange" name="" range="{{departmentList2}}" range-key="name" value="{{deparmentPickIndex2}}" >
+          <button type="default">{{departmentList2[departmentPickIndex2]["name"]}}</button>
+          <input hidden="true" value="{{departmentList2[departmentPickIndex2]['id']}}" name="useridepartmentiid_id"/>
+        </picker>
+      </view>
+    </view>
+
+
+     <input hidden="true" value="{{wholedepartmentname}}" name="wholedepartmentname"/>
+
+    <view style="clear:both"></view>
+    <button class="btn" form-type="submit" hover-class="none">注册</button>
+  </form>
+
