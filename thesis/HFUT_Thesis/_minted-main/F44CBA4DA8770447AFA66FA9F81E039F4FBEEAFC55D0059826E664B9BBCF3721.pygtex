@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{}server.urls.py}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{Django}\PYG{o}{.}\PYG{n}{conf}\PYG{o}{.}\PYG{n}{urls} \PYG{k+kn}{import} \PYG{n+nn}{url}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{Django}\PYG{o}{.}\PYG{n}{contrib} \PYG{k+kn}{import} \PYG{n+nn}{admin}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{Django}\PYG{o}{.}\PYG{n}{urls} \PYG{k+kn}{import} \PYG{n+nn}{path}\PYG{o}{,} \PYG{n+nn}{include}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurlpatterns} \PYG{o}{=} \PYG{p}{[}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}admin/\PYGZsq{}}\PYG{p}{,} \PYG{n}{admin}\PYG{o}{.}\PYG{n}{site}\PYG{o}{.}\PYG{n}{urls}\PYG{p}{),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurl}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}app01/\PYGZsq{}}\PYG{p}{,} \PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}app01.urls\PYGZsq{}}\PYG{p}{)),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurl}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}login/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}login.urls\PYGZsq{}}\PYG{p}{)),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurl}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}auth/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}authorization.urls\PYGZsq{}}\PYG{p}{)),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurl}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}user/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}user.urls\PYGZsq{}}\PYG{p}{)),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurl}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}department/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}department.urls\PYGZsq{}}\PYG{p}{)),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurl}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}contest/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}contest.urls\PYGZsq{}}\PYG{p}{)),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurl}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}group/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}group.urls\PYGZsq{}}\PYG{p}{)),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{p}{]}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{}user.urls.py}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{Django}\PYG{o}{.}\PYG{n}{urls} \PYG{k+kn}{import} \PYG{n+nn}{path}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{user} \PYG{k+kn}{import} \PYG{n+nn}{views}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurlpatterns} \PYG{o}{=} \PYG{p}{[}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}getUserData\PYGZsq{}}\PYG{p}{,} \PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}updateUserData\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}createUser\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}isExist\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{isExist}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{p}{]}
+\end{Verbatim}

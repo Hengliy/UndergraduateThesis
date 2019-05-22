@@ -1,0 +1,46 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{} urls.py}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{Django}\PYG{o}{.}\PYG{n}{http} \PYG{k+kn}{import} \PYG{n+nn}{HttpResponse}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{Django}\PYG{o}{.}\PYG{n}{http} \PYG{k+kn}{import} \PYG{n+nn}{JsonResponse}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{Django}\PYG{o}{.}\PYG{n}{views} \PYG{k+kn}{import} \PYG{n+nn}{View}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{app01}\PYG{o}{.}\PYG{n}{models} \PYG{k+kn}{import} \PYG{n+nn}{Tbluserinfo}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iclass} \PYG{n}{UserView}\PYG{p}{(}\PYG{n}{View}\PYG{p}{,} \PYG{n}{CommonResponseMixin}\PYG{p}{):}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{} 获取用户信息}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Idef} \PYG{n}{get}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{request}\PYG{p}{):}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{IID}\PYG{o}{=}\PYG{n}{request}\PYG{o}{.}\PYG{n}{session}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ID\PYGZsq{}}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Idata}\PYG{o}{=}\PYG{n}{Tbluserinfo}\PYG{o}{.}\PYG{n}{objects}\PYG{o}{.}\PYG{n}{filter}\PYG{p}{(}\PYG{n+nb}{id}\PYG{o}{=}\PYG{n}{ID}\PYG{p}{)}\PYG{o}{.}\PYG{n}{values}\PYG{p}{()}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Imessage} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}get user info success\PYGZsq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iresponse} \PYG{o}{=} \PYG{n}{CommonResponseMixin}\PYG{o}{.}\PYG{n}{wrap\PYGZus{}json\PYGZus{}response}\PYG{p}{(}\PYG{n}{code}\PYG{o}{=}\PYG{n}{ReturnCode}\PYG{o}{.}\PYG{n}{SUCCESS}\PYG{p}{,} \PYG{n}{data}\PYG{o}{=}\PYG{n+nb}{list}\PYG{p}{(}\PYG{n}{data}\PYG{p}{))}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireturn} \PYG{n}{JsonResponse}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{safe}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{}修改信息}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Idef} \PYG{n}{put}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,} \PYG{n}{request}\PYG{p}{):}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{IID} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{session}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ID\PYGZsq{}}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireceived\PYGZus{}body} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{body}\PYG{o}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}utf\PYGZhy{}8\PYGZsq{}}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireceived\PYGZus{}body} \PYG{o}{=} \PYG{n+nb}{eval}\PYG{p}{(}\PYG{n}{received\PYGZus{}body}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iobj}\PYG{o}{=}\PYG{n}{Tbluserinfo}\PYG{o}{.}\PYG{n}{objects}\PYG{o}{.}\PYG{n}{filter}\PYG{p}{(}\PYG{n+nb}{id}\PYG{o}{=}\PYG{n}{ID}\PYG{p}{)}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{o}{**}\PYG{n}{received\PYGZus{}body}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Imessage} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}modify user info success.\PYGZsq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iresponse} \PYG{o}{=} \PYG{n}{CommonResponseMixin}\PYG{o}{.}\PYG{n}{wrap\PYGZus{}json\PYGZus{}response}\PYG{p}{(}\PYG{n}{code}\PYG{o}{=}\PYG{n}{ReturnCode}\PYG{o}{.}\PYG{n}{SUCCESS}\PYG{p}{,} \PYG{n}{message}\PYG{o}{=}\PYG{n}{message}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireturn} \PYG{n}{JsonResponse}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{safe}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{}新建用户}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Idef} \PYG{n}{post}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,}\PYG{n}{request}\PYG{p}{):}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireceived\PYGZus{}body} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{body}\PYG{o}{.}\PYG{n}{decode}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}utf\PYGZhy{}8\PYGZsq{}}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireceived\PYGZus{}body} \PYG{o}{=} \PYG{n+nb}{eval}\PYG{p}{(}\PYG{n}{received\PYGZus{}body}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireceived\PYGZus{}body}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}delflag\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}0\PYGZsq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireceived\PYGZus{}body}\PYG{p}{[}\PYG{l+s+s1}{\PYGZsq{}verifyflag\PYGZsq{}}\PYG{p}{]} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}1\PYGZsq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{ITbluserinfo}\PYG{o}{.}\PYG{n}{objects}\PYG{o}{.}\PYG{n}{create}\PYG{p}{(}\PYG{o}{**}\PYG{n}{received\PYGZus{}body}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Imessage} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}create new user success.\PYGZsq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iresponse} \PYG{o}{=} \PYG{n}{CommonResponseMixin}\PYG{o}{.}\PYG{n}{wrap\PYGZus{}json\PYGZus{}response}\PYG{p}{(}\PYG{n}{code}\PYG{o}{=}\PYG{n}{ReturnCode}\PYG{o}{.}\PYG{n}{SUCCESS}\PYG{p}{,} \PYG{n}{message}\PYG{o}{=}\PYG{n}{message}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireturn} \PYG{n}{JsonResponse}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{safe}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{}删除用户}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Idef} \PYG{n}{delete}\PYG{p}{(}\PYG{n+nb+bp}{self}\PYG{p}{,}\PYG{n}{request}\PYG{p}{):}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{IID} \PYG{o}{=} \PYG{n}{request}\PYG{o}{.}\PYG{n}{session}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}ID\PYGZsq{}}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iobj} \PYG{o}{=} \PYG{n}{Tbluserinfo}\PYG{o}{.}\PYG{n}{objects}\PYG{o}{.}\PYG{n}{filter}\PYG{p}{(}\PYG{n+nb}{id}\PYG{o}{=}\PYG{n}{ID}\PYG{p}{)}\PYG{o}{.}\PYG{n}{update}\PYG{p}{(}\PYG{n}{delflag}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Imessage} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}delete user info success.\PYGZsq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iresponse} \PYG{o}{=} \PYG{n}{CommonResponseMixin}\PYG{o}{.}\PYG{n}{wrap\PYGZus{}json\PYGZus{}response}\PYG{p}{(}\PYG{n}{code}\PYG{o}{=}\PYG{n}{ReturnCode}\PYG{o}{.}\PYG{n}{SUCCESS}\PYG{p}{,} \PYG{n}{message}\PYG{o}{=}\PYG{n}{message}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireturn} \PYG{n}{JsonResponse}\PYG{p}{(}\PYG{n}{response}\PYG{p}{,} \PYG{n}{safe}\PYG{o}{=}\PYG{n+nb+bp}{False}\PYG{p}{)}
+\end{Verbatim}

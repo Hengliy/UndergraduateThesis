@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{HTTP}\PYG{o}{/}\PYG{l+m+mf}{1.1} \PYG{l+m+mi}{200} \PYG{n}{OK}
+\PYG{n}{Content}\PYG{o}{\PYGZhy{}}\PYG{n}{Type}\PYG{p}{:} \PYG{n}{application}\PYG{o}{/}\PYG{n}{json}
+\PYG{n}{Content}\PYG{o}{\PYGZhy{}}\PYG{n}{Length}\PYG{p}{:} \PYG{l+m+mi}{234}
+\PYG{p}{\PYGZob{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{l+s+s2}{\PYGZdq{}url\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}/api/Tbluserinfo/1\PYGZdq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{l+s+s2}{\PYGZdq{}method\PYGZdq{}}\PYG{p}{:}\PYG{l+s+s2}{\PYGZdq{}get\PYGZdq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{l+s+s2}{\PYGZdq{}data\PYGZdq{}}\PYG{p}{:[}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{p}{\PYGZob{}}
+
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{p}{\PYGZcb{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{p}{]}
+\PYG{p}{\PYGZcb{}}
+\end{Verbatim}

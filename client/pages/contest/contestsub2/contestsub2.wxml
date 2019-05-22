@@ -1,0 +1,72 @@
+<!--pages/activity/activity.wxml-->
+<view style="height:100%;">
+<!-- <view class="header">
+  <text bindtap="timeArrange" class="control {{timeModal ? 'chosen':''}}">时间<text class="fa fa-sort-desc" aria-hidden="true"></text>
+  </text>
+  <text bindtap="popularArrange" class="control {{popularModal ? 'chosen':''}}">热度<text class="fa fa-sort-desc" aria-hidden="true"></text>
+  </text>
+ 
+  <text class="control {{progressModal ? 'chosen':''}}" bindtap="toggleProgressModal">{{progressState}}<text class="fa fa-sort-desc" aria-hidden="true"></text></text>
+</view> -->
+<!-- 比赛信息卡片 -->
+<view class="none_tips" wx:if="{{contestTypeList.length==0}}">
+    暂无活动
+</view>
+<view wx:for="{{contestTypeList}}">
+
+  <view class="item_box" data-matchid="{{item.id}}" bindtap="gotoDetails">
+      <view class="image_area">
+          <image src="../../../resources/images/tab1/male.png"></image>
+      </view>
+      <view class="text_area">
+        <view class="line">
+          <text class="title">{{item.name}}</text>
+        </view>
+
+        <view class="line">
+        <image class="icon_img" src="../../../resources/images/tab1/calender.png"></image>
+          <!-- <text class="description">{{item.beginTime}}——{{item.endTime}}</text> -->
+          <text class="description">时间</text>
+        </view>
+
+        <view class="line">
+        <image class="icon_img" src="../../../resources/images/tab1/address.png"></image>
+          <text class="description">第一教学楼101教室</text>
+          <view class="member_num">
+            <image src="../../../resources/images/tab1/team.png"></image>
+            <text class="description">队伍人数</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 进度信息 -->
+      <image class="progress_box" src="../../../resources/images/tab1/jinxing.png">
+        <view class="progress_text">进行中</view>
+      </image>
+      <!-- <image wx:if="{{item.progress=='报名中'}}" class="progress_box" src="../../../images/tab1/baoming.png">
+        <view class="progress_text">报名中</view>
+      </image>
+      <image wx:if="{{item.progress=='已结束'}}" class="progress_box" src="../../../images/tab1/end.png">
+        <view class="progress_text">已结束</view>
+      </image> -->
+
+  </view>
+</view>
+
+
+<!-- 进度选择弹窗 -->
+<!-- <view class="sim-modal {{showModal ? 'sim-modal-show':''}}">
+  <view class="sim-modal-mask" bindtap="toggleProgressModal"></view>
+  <view class="sim-modal-container">
+    <view class="sim-row" data-state="1" data-text="报名中" bindtap="chooseProgress">
+      <text>报名中</text>
+    </view>
+    <view class="sim-row" data-state="2" data-text="进行中" bindtap="chooseProgress">
+      <text>进行中</text>
+    </view>
+    <view class="sim-row" data-state="3" data-text="已结束" bindtap="chooseProgress">
+      <text>已结束</text>
+    </view>
+  </view>
+</view> -->
+</view>

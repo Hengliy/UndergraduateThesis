@@ -1,0 +1,32 @@
+<view class="main">
+
+<view class="utitle">
+        <view class="mtitle">对赛队伍列表</view>
+        <view class="ztitle">grouplist</view>
+    </view> 
+
+
+<view class="none_tips" wx:if="{{groupBriefList.length==0}}">
+    暂无比赛队伍
+</view>
+
+<view class="strengtharea">
+<view class="inner">
+<view wx:for="{{groupBriefList}}">
+
+  <view class="strengthlist" data-matchid="{{item.id}}" bindtap="gotoDetails">
+    <view class="strengthimg"><image src="../../resources/images/tab1/team.png"></image></view>
+    <view class="strengthinfo">
+      <view class="ilist">队伍名称：<text class="zhicheng" > {{item.groupname}} </text></view>
+      <text class="ilist">竞赛名称：{{item.contestinfoid__name}} </text>
+      <!-- <view class="ilist">队伍名称：一级讲师，英语8级，获得国家级英语竞赛一等奖</view> -->
+    </view>
+  </view>
+</view>
+
+</view>
+</view>
+</view>
+
+<view class="lastpage" bindtap='addNewGroup'>添加新报名队伍</view>
+	

@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{c+c1}{\PYGZsh{} urls.py}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{Django}\PYG{o}{.}\PYG{n}{urls} \PYG{k+kn}{import} \PYG{n+nn}{path}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ifrom} \PYG{n}{user} \PYG{k+kn}{import} \PYG{n+nn}{views}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurlpatterns} \PYG{o}{=} \PYG{p}{[}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}getUserData\PYGZsq{}}\PYG{p}{,} \PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}updateUserData\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}createUser\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ipath}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}isExist\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{isExist}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{p}{]}
+\end{Verbatim}

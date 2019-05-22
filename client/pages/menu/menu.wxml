@@ -1,0 +1,42 @@
+<!--pages/menu/menu.wxml-->
+<view class="page">
+  <view class="page__hd">
+    <view class="weui-panel__hd">应用列表</view>
+  </view>
+  <view class="page__bd">
+    <view class="weui-grids">
+      <!-- <block wx:for="{{grids}}" wx:key="*this"> -->
+        <navigator url="/pages/register/register" class="weui-grid" hover-class="weui-grid_active" >
+          <image class="weui-grid__icon" src="../../../resources/icons/cube.svg" />
+          <view class="weui-grid__label">会员注册</view>
+        </navigator>
+
+        <navigator url="/pages/contest/contest" class="weui-grid" hover-class="weui-grid_active" >
+          <image class="weui-grid__icon" src="../../../resources/icons/cube.svg" />
+          <view class="weui-grid__label">竞赛查看</view>
+        </navigator>
+<!-- 
+        <navigator url="" class="weui-grid" hover-class="weui-grid_active" data-index='{{index}}' bindtap='onNavigatorTap'>
+          <image class="weui-grid__icon" src="../../../resources/icons/cube.svg" />
+          <view class="weui-grid__label">登陆评分</view>
+        </navigator> -->
+
+        <navigator url="/pages/join/join" class="weui-grid" hover-class="weui-grid_active" data-index='{{index}}' bindtap='onNavigatorTap'>
+          <image class="weui-grid__icon" src="../../../resources/icons/cube.svg" />
+          <view class="weui-grid__label">竞赛队伍管理</view>
+        </navigator>
+
+        <navigator url="" class="weui-grid" hover-class="weui-grid_active" data-index='{{index}}' bindtap='onNavigatorTap'>
+          <image class="weui-grid__icon" src="../../../resources/icons/cube.svg" />
+          <view class="weui-grid__label">作品提交</view>
+        </navigator>
+
+        <navigator url="" class="weui-grid" hover-class="weui-grid_active" data-index='{{index}}' bindtap='onNavigatorTap'>
+          <image class="weui-grid__icon" src="../../../resources/icons/cube.svg" />
+          <view class="weui-grid__label">登陆日志</view>
+        </navigator>
+
+      <!-- </block> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,101 @@
+<!--pages/contest/contestDetail/contestDetail.wxml-->
+<text>比赛介绍</text>
+<text>{{contestInfo}}</text>
+<!--index.wxml-->
+<!-- <view class="container"> -->
+<view class="">
+    <!-- <view style="text-align:center">
+        <image src="https://njuptdocker.cn/source/manner.jpg" mode="scaleToFill" style="width:580rpx;height:323rpx;"></image>
+    </view> -->
+    <view class="viewtitle">
+        <text class="title">竞赛队伍详细信息</text>
+    </view>
+
+    <view style="width:750rpx">
+
+          <!-- <view class="inputitem" style="display:inline-block;width:465rpx;"> -->
+          <view class="inputitem" >
+            <text class="inputinfo" confirm-type="next" >竞赛名称：</text>
+            <input type="text" style="float:right;width:550rpx;" class="inputs" placeholder="{{groupInfo.contestinfoid__name}}" placeholder-class="holder" bindblur="getName" />
+          </view>
+
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next"> 队伍名称</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.groupname}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+           <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">队伍编号</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.groupnumber}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">审核情况</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.verifyflag}}" placeholder-class="holder" bindblur="getId" />
+          </view>    
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">学校名称</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.schoolid__name}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">创建人：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.creatorid__name}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">创建日期：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.createdate}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">作品名称：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.workname}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">作品简介：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.remark}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">网评最终成绩：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.score}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">现场分组编号：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.offlineallocateid}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">现场分组原得分：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.offlinescore}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">现场分组加权得分：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.offlinearrangescore}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">最后总分：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.allscore}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+          
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">最终获奖情况：</text>
+            <input type="text" class="inputs" placeholder="{{groupInfo.groupresult}}" placeholder-class="holder" bindblur="getId" />
+          </view>
+
+    </view>
+<!-- 
+    <view class="button-flex">
+        <button class="ok" bindtap="sendInfo">修改</button>
+        <button bindtap="sendInfo" bindtap="getInfo" class="info">查看报名信息</button>
+    </view> -->
+
+    <text class="text">报名信息以微信号为准，一个微信号只能报一个学号,如需修改，再次报名即可</text>
+    <!-- <button type="primary" bindtap="go">跳转</button> -->
+</view>

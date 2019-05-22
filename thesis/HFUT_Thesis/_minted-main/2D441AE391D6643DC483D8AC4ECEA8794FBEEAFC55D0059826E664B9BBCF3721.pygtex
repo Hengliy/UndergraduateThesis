@@ -1,0 +1,30 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{}server.urls.py}
+\PYG{k+kn}{from} \PYG{n+nn}{django.conf.urls} \PYG{k+kn}{import} \PYG{n}{url}
+\PYG{k+kn}{from} \PYG{n+nn}{django.contrib} \PYG{k+kn}{import} \PYG{n}{admin}
+\PYG{k+kn}{from} \PYG{n+nn}{django.urls} \PYG{k+kn}{import} \PYG{n}{path}\PYG{p}{,} \PYG{n}{include}
+
+\PYG{n}{urlpatterns} \PYG{o}{=} \PYG{p}{[}
+    \PYG{n}{path}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}admin/\PYGZsq{}}\PYG{p}{,} \PYG{n}{admin}\PYG{o}{.}\PYG{n}{site}\PYG{o}{.}\PYG{n}{urls}\PYG{p}{),}
+    \PYG{n}{url}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}app01/\PYGZsq{}}\PYG{p}{,} \PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}app01.urls\PYGZsq{}}\PYG{p}{)),}
+    \PYG{n}{url}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}login/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}login.urls\PYGZsq{}}\PYG{p}{)),}
+    \PYG{n}{url}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}auth/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}authorization.urls\PYGZsq{}}\PYG{p}{)),}
+    \PYG{n}{url}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}user/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}user.urls\PYGZsq{}}\PYG{p}{)),}
+    \PYG{n}{url}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}department/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}department.urls\PYGZsq{}}\PYG{p}{)),}
+    \PYG{n}{url}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}contest/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}contest.urls\PYGZsq{}}\PYG{p}{)),}
+    \PYG{n}{url}\PYG{p}{(}\PYG{l+s+sa}{r}\PYG{l+s+s1}{\PYGZsq{}\PYGZca{}group/\PYGZsq{}}\PYG{p}{,}\PYG{n}{include}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}group.urls\PYGZsq{}}\PYG{p}{)),}
+\PYG{p}{]}
+
+\PYG{c+c1}{\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}\PYGZsh{}}
+
+\PYG{c+c1}{\PYGZsh{}user.urls.py}
+\PYG{k+kn}{from} \PYG{n+nn}{django.urls} \PYG{k+kn}{import} \PYG{n}{path}
+\PYG{k+kn}{from} \PYG{n+nn}{user} \PYG{k+kn}{import} \PYG{n}{views}
+
+\PYG{n}{urlpatterns} \PYG{o}{=} \PYG{p}{[}
+    \PYG{n}{path}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}getUserData\PYGZsq{}}\PYG{p}{,} \PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+    \PYG{n}{path}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}updateUserData\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+    \PYG{n}{path}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}createUser\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{UserView}\PYG{o}{.}\PYG{n}{as\PYGZus{}view}\PYG{p}{()),}
+    \PYG{n}{path}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}isExist\PYGZsq{}}\PYG{p}{,}\PYG{n}{views}\PYG{o}{.}\PYG{n}{isExist}\PYG{p}{)}
+\PYG{p}{]}
+\end{Verbatim}

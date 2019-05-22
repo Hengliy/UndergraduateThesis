@@ -1,0 +1,67 @@
+<!--pages/contest/contestDetail/contestDetail.wxml-->
+<text>{{contestInfo}}</text>
+<!--index.wxml-->
+<!-- <view class="container"> -->
+<view class="">
+    <!-- <view style="text-align:center">
+        <image src="https://njuptdocker.cn/source/manner.jpg" mode="scaleToFill" style="width:580rpx;height:323rpx;"></image>
+    </view> -->
+    <view class="viewtitle">
+        <text class="title">竞赛队伍详细信息</text>
+    </view>
+
+    <view style="width:750rpx">
+
+          <!-- <view class="inputitem" style="display:inline-block;width:465rpx;"> -->
+          <view class="inputitem" >
+              <text class="inputinfo" confirm-type="next" >竞赛名称：</text>
+              <input type="text" class="inputs" placeholder="" placeholder-class="holder" bindblur="getName" />
+          </view>
+
+          <!-- <view class="pickeritem inputitem" style="float:right;width:265rpx;"> -->
+          <view class="pickeritem inputitem">
+              <text class="inputinfo" >竞赛项目：</text>
+              <picker class="picker" bindchange="getSex" value="{{index2}}" range="{{sexs}}">
+                  <text class="gg">{{sexs[index2]}}</text>
+              </picker>
+          </view>
+
+          <view class="pickeritem inputitem">
+              <picker class="picker" bindchange="getSex" value="{{index2}}" range="{{sexs}}">
+                  <text class="gg">{{sexs[index2]}}</text>
+              </picker>
+          </view>
+
+            <view class="pickeritem inputitem">
+              <picker class="picker" bindchange="getSex" value="{{index2}}" range="{{sexs}}">
+                  <text class="gg">{{sexs[index2]}}</text>
+              </picker>
+          </view>
+
+          <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">队伍名称：</text>
+            <input type="text" class="inputs" placeholder="" placeholder-class="holder" bindblur="getId" />
+          </view>
+           <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">队伍编号</text>
+            <input type="text" class="inputs" placeholder="系统自动创建" placeholder-class="holder" bindblur="getId" />
+          </view>
+           <view class="inputitem">
+            <text class="inputinfo" confirm-type="next">队伍名称：</text>
+            <input type="text" class="inputs" placeholder="" placeholder-class="holder" bindblur="getId" />
+          </view>
+        
+
+    </view>
+    <view class="button-flex">
+        <button class="ok" bindtap="sendInfo">
+        确认报名
+    </button>
+        <button bindtap="sendInfo" bindtap="getInfo" class="info">
+        查看报名信息
+    </button>
+    </view>
+
+    <text class="text">报名信息以微信号为准，一个微信号只能报一个学号,如需修改，再次报名即可</text>
+    <!-- <button type="primary" bindtap="go">跳转</button> -->
+</view>

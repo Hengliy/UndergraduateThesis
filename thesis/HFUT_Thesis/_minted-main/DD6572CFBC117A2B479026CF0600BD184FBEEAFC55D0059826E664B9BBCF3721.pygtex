@@ -1,0 +1,11 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Idef} \PYG{n}{code2session}\PYG{p}{(}\PYG{n}{appid}\PYG{p}{,}\PYG{n}{code}\PYG{p}{):}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{IAPI} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}https://api.weixin.qq.com/sns/jscode2session\PYGZsq{}}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iparams} \PYG{o}{=} \PYG{l+s+s1}{\PYGZsq{}appid=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s1}{\PYGZam{}secret=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s1}{\PYGZam{}js\PYGZus{}code=}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s+s1}{\PYGZam{}grant\PYGZus{}type=authorization\PYGZus{}code\PYGZsq{}} \PYG{o}{\PYGZpc{}} \PYGZbs{}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{p}{(}\PYG{n}{appid}\PYG{p}{,} \PYG{n}{backend}\PYG{o}{.}\PYG{n}{settings}\PYG{o}{.}\PYG{n}{WX\PYGZus{}APP\PYGZus{}SECRET}\PYG{p}{,} \PYG{n}{code}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iurl} \PYG{o}{=} \PYG{n}{API} \PYG{o}{+} \PYG{l+s+s1}{\PYGZsq{}?\PYGZsq{}} \PYG{o}{+} \PYG{n}{params}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Iresponse} \PYG{o}{=} \PYG{n}{requests}\PYG{o}{.}\PYG{n}{get}\PYG{p}{(}\PYG{n}{url}\PYG{o}{=}\PYG{n}{url}\PYG{p}{,}\PYG{n}{proxies}\PYG{o}{=}\PYG{n}{proxy}\PYG{o}{.}\PYG{n}{proxy}\PYG{p}{())}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Idata} \PYG{o}{=} \PYG{n}{json}\PYG{o}{.}\PYG{n}{loads}\PYG{p}{(}\PYG{n}{response}\PYG{o}{.}\PYG{n}{text}\PYG{p}{)}
+\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{I}\PYG{o}{\PYGZca{}\PYGZca{}}\PYG{n}{Ireturn} \PYG{n}{data}
+\end{Verbatim}
