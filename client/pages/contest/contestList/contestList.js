@@ -50,7 +50,7 @@ Page({
     // app.globalData.contestParentIndex=matchId
     console.log("go to detail")
     wx.navigateTo({
-      url: '../contest/contestsub1/contestsub1?parentindex='+matchId
+      url: '../contestsub1/contestsub1?parentindex='+matchId
     })
   },
 

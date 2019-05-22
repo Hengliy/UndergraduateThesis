@@ -1,4 +1,20 @@
 <!--pages/getinto.wxml-->
+
+<template name="access-box">
+  <view class='box'>
+    <view class='msg-box'>
+      <text class='title'>{{title}}</text>
+      <view class='line'/>
+      <text class='msg'> {{msg}} </text>
+      <view class='btn'>
+        <button type='primary' bindtap='cancle' class='btn-cancle'>{{cancle}}</button>
+        <button type='primary' class='btn-confirm' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>{{confirm}}</button>
+      </view>
+    </view>
+  </view>
+</template>
+
+
 <view class='container'>
   
   <view class="login-icon">
@@ -22,6 +38,14 @@
 
   </view>
 
+<view class="zan-dialog {{ showDialog ? 'zan-dialog--show' : '' }}">
+  <view class="zan-dialog__mask" bindtap="toggleDialog" />
+  <view class="zan-dialog__container">
+    <view style='padding:100rpx;'>此处是填充的布局代码</view>
+  </view>
+</view>
+
+
   <view class="login">
     <view class='info'>{{result}}
     <button class='loginbtn' type='primary ' size='{{primarysize }}'loading='{{loading}}' plain="{{plain}}"bindtap="login">登录</button>
@@ -32,4 +56,19 @@
     <button class='registerbtn' type='primary ' size='{{primarysize }}'loading='{{loading}}' plain="{{plain}}"bindtap="register">注册</button>
   </view>
   </view>
+
+
+
+
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" catchtap="tapcatch" wx:if="{{hasMask}}"/>
+
+<view class="modalDlg" wx:if="{{hasMask}}">
+  <!-- 弹窗内容可以自定义 -->
+  <template is="access-box" data="{{...access}}"/>
+</view>
+
+<view wx:else='{{!hasMask}}' style='text-align:center;padding-top:50px;'>
+  <button bindtap="showMask" type='primary' style='width:50%;' >点我弹窗</button>
 </view>

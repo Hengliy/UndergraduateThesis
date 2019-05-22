@@ -16,7 +16,7 @@
 
   <view class="item_box" data-matchid="{{item.id}}" bindtap="gotoDetails">
       <view class="image_area">
-          <image src="../../resources/images/tab1/male.png"></image>
+          <image src="../../../resources/images/tab1/male.png"></image>
       </view>
       <view class="text_area">
         <view class="line">
@@ -24,23 +24,23 @@
         </view>
 
         <view class="line">
-        <image class="icon_img" src="../../resources/images/tab1/calender.png"></image>
+        <image class="icon_img" src="../../../resources/images/tab1/calender.png"></image>
           <!-- <text class="description">{{item.beginTime}}——{{item.endTime}}</text> -->
           <text class="description">时间</text>
         </view>
 
         <view class="line">
-        <image class="icon_img" src="../../resources/images/tab1/address.png"></image>
+        <image class="icon_img" src="../../../resources/images/tab1/address.png"></image>
           <text class="description">第一教学楼101教室</text>
           <view class="member_num">
-            <image src="../../resources/images/tab1/team.png"></image>
+            <image src="../../../resources/images/tab1/team.png"></image>
             <text class="description">队伍人数</text>
           </view>
         </view>
       </view>
 
       <!-- 进度信息 -->
-      <image class="progress_box" src="../../resources/images/tab1/jinxing.png">
+      <image class="progress_box" src="../../../resources/images/tab1/jinxing.png">
         <view class="progress_text">进行中</view>
       </image>
       <!-- <image wx:if="{{item.progress=='报名中'}}" class="progress_box" src="../../images/tab1/baoming.png">

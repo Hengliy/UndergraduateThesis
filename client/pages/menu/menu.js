@@ -8,53 +8,51 @@ Page({
    * 页面的初始数据
    */
   data: {
-    grids: [{
-      "name": "应用1"
-    },{
-      "name": "应用2"
-    },{
-      "name": "应用3"
-    },{
-      "name": "应用4"
-    },{
-      "name": "应用5"
-    },
-    ]// 九宫格内容
+
+    dutyID:null,
+
   },
 
-  onNavigatorTap: function (e) {
-    var index = e.currentTarget.dataset.index
-    console.log(index)
-    if (index == 0) {
-      wx.navigateTo({
-        url: '../register/register',
-      })
-    } else if (index == 1) {
-      wx.navigateTo({
-        url: '../apply/apply',
-      })
-    } else if (index == 2) {
-      wx.navigateTo({
-        url: '../index/index'
-      })
-    } else if (index == 3) {
-      wx.navigateTo({
-        url: '../logs/logs'
-      })
-    } 
-  },
+  // onNavigatorTap: function (e) {
+  //   var index = e.currentTarget.dataset.index
+  //   console.log(index)
+  //   if (index == 0) {
+  //     wx.navigateTo({
+  //       url: '../register/register',
+  //     })
+  //   } else if (index == 1) {
+  //     wx.navigateTo({
+  //       url: '../apply/apply',
+  //     })
+  //   } else if (index == 2) {
+  //     wx.navigateTo({
+  //       url: '../index/index'
+  //     })
+  //   } else if (index == 3) {
+  //     wx.navigateTo({
+  //       url: '../logs/logs'
+  //     })
+  //   } 
+  // },
+
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log(app.globalData.userData)
     this.updateMenuData()
+    console.log(this.data.dutyID)
   },
 
   /**
    * 请求后台，更新menu数据
    */
   updateMenuData: function() {
+    this.setData({
+      dutyID: app.globalData.userData["useridutyiid_id"]
+    })
     // var that = this
     // wx.request({
     //   url: app.globalData.serverUrl + app.globalData.apiVersion + '/service/menu',

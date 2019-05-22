@@ -1,7 +1,7 @@
 // pages/join/join.js
 const app = getApp()
-const cookieUtil = require('../../utils/cookie.js')
-const authUtil = require('../../utils/auth.js')
+const cookieUtil = require('../../../utils/cookie.js')
+const authUtil = require('../../../utils/auth.js')
 
 Page({
 

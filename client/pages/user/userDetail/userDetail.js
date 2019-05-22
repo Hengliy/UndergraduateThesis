@@ -1,8 +1,8 @@
 // pages/userDetail/userDetail.js
 
 const app = getApp()
-const cookieUtil = require('../../utils/cookie.js')
-const authUtil = require('../../utils/auth.js')
+const cookieUtil = require('../../../utils/cookie.js')
+const authUtil = require('../../../utils/auth.js')
 
 Page({
 
@@ -12,7 +12,7 @@ Page({
   data: {
     userData: {},
     hasUserData: false,
-   
+    
     sexList:['男','女'],//角色选择
     sexPickIndex:0,
 
